@@ -1,0 +1,7 @@
+<ul>
+    <li *ngFor="let livre of livres">
+        <app-livre [livre]=livre
+            (click)="onClicked(livre)"></app-livre>
+    </li>
+</ul>
+<span *ngIf="message">{{ message }}</span>

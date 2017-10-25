@@ -1,1 +1,5 @@
-<h1>LIVRES</h1>
+<h1>LIVRES de {{ author }}</h1>
+<form>
+    <input type="text" [(ngModel)]="saisie" name="saisie" />
+</form>
+<span (click)="resetSaisie()">{{saisie}}</span>
