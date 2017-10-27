@@ -17,10 +17,10 @@ export class LivreListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.livres = this.service.getAll();
+        this.service.getAll().subscribe(livres => this.livres = livres);
     }
 
-    onClicked(livre: Livre){
+    onClicked(livre: Livre) {
         this.message = 'Livre cliqué : ' + livre.titre;
     }
 

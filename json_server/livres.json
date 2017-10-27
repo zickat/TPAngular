@@ -1,0 +1,20 @@
+{
+  "livre": [
+    {
+      "id": 1,
+      "titre": "Le foot",
+      "author": "Zizou",
+      "collection": "Le foot est top !"
+    },
+    {
+      "titre": "Le foot 2",
+      "author": "Zizou",
+      "collection": "Le foot est top !"
+    },
+    {
+      "titre": "Le foot 3",
+      "author": "Zizou",
+      "collection": "Le foot est top !"
+    }
+  ]
+}

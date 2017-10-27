@@ -7,10 +7,16 @@ import {LivreService} from './livre.service';
 import { LivreListComponent } from './livre-list/livre-list.component';
 import {FormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
-    {path: '', component: LivreListComponent},
-    {path: 'livre/:id', component: LivreComponent},
+    {
+        path: 'livre', component: LivreListComponent,
+        children: [
+            {path: '', component: LivreListComponent},
+            {path: ':id', component: LivreComponent}
+        ]
+    },
     // {path: 'admin', component: LivreListComponent},
 ];
 
@@ -18,6 +24,7 @@ const appRoutes: Routes = [
     imports: [
         CommonModule,
         FormsModule,
+        HttpClientModule,
         RouterModule.forChild(appRoutes)
     ],
     exports: [

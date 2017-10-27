@@ -1,36 +1,20 @@
 import {Injectable} from '@angular/core';
 import {Livre} from './Livre';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class LivreService {
 
-    books: Livre[] = [
-        {
-            titre: 'Le foot',
-            author: 'Zizou',
-            collection: 'Le foot est top !'
-        },
-        {
-            titre: 'Le foot 2',
-            author: 'Zizou',
-            collection: 'Le foot est top !'
-        },
-        {
-            titre: 'Le foot 3',
-            author: 'Zizou',
-            collection: 'Le foot est top !'
-        }
-    ];
-
-    constructor() {
+    constructor(private http: HttpClient) {
     }
 
-    get(id: number): Livre {
-        return this.books[id];
+    get(id: number): Observable<Livre> {
+        return this.http.get(`/api/livre/${id}`);
     }
 
-    getAll(): Livre[] {
-        return this.books;
+    getAll(): Observable<Livre[]> {
+        return this.http.get('/api/livre');
     }
 
 }

@@ -3,7 +3,16 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {LivreModule} from './livre/livre.module';
-import {RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
+import {AdminModule} from './admin/admin.module';
+
+const routes: Routes = [
+    {path: '', redirectTo: '/livre', pathMatch: 'full'},
+    {
+        path: 'admin',
+        loadChildren: 'app/admin/admin.module#AdminModule'
+    }
+];
 
 @NgModule({
     declarations: [
@@ -12,7 +21,7 @@ import {RouterModule} from '@angular/router';
     imports: [
         BrowserModule,
         LivreModule,
-        RouterModule.forRoot([])
+        RouterModule.forRoot(routes)
     ],
     providers: [],
     bootstrap: [AppComponent]

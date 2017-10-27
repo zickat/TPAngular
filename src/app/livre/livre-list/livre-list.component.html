@@ -1,6 +1,6 @@
 <ul>
     <ng-container *ngFor="let livre of livres, let i = index">
-        <a [routerLink]="['livre', i]">{{ livre.titre }}</a>
+        <a [routerLink]="[i]">{{ livre.titre }}</a>
     </ng-container>
 </ul>
 <span *ngIf="message">{{ message }}</span>

@@ -19,8 +19,9 @@ export class LivreComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.paramObs = this.route.paramMap
-            .subscribe((params: ParamMap) => this.livre = this.service.get(+params.get('id')));
+        this.paramObs = this.route.paramMap.switchMap(
+            (params: ParamMap) => this.service.get(+params.get('id'))
+        ).subscribe(livre => this.livre = livre);
     }
 
 }
