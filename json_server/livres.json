@@ -2,7 +2,7 @@
   "livre": [
     {
       "id": 1,
-      "titre": "Le foot",
+      "titre": "Le foot de malade",
       "author": "Zizou",
       "collection": "Le foot est top !"
     },
@@ -15,6 +15,11 @@
       "titre": "Le foot 3",
       "author": "Zizou",
       "collection": "Le foot est top !"
+    },
+    {
+      "titre": "new",
+      "author": "livre",
+      "id": 2
     }
   ]
 }

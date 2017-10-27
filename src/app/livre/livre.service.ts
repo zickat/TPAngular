@@ -17,4 +17,12 @@ export class LivreService {
         return this.http.get('/api/livre');
     }
 
+    add(livre: Livre): void {
+        this.http.post<Livre>('/api/livre', livre).subscribe();
+    }
+
+    update(id: number, livre: Livre): void {
+        this.http.put(`/api/livre/${id}`, livre).subscribe();
+    }
+
 }

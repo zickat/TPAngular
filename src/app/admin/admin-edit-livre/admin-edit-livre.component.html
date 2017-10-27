@@ -1,3 +1,7 @@
-<form>
-    <input placeholder="Titre" name="titre"
+<form (ngSubmit)="submit()" #livreForm="ngForm">
+    {{ livreForm.form.valid | json }}
+    <input placeholder="Titre" name="titre" type="text" [(ngModel)]="livre.titre" minlength="2" required/>
+    <input placeholder="Auteur" name="author" type="text" [(ngModel)]="livre.author" />
+    <button type="submit">Ajouter</button>
 </form>
+{{ livre | json }}
