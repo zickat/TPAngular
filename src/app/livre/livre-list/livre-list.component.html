@@ -1,7 +1,6 @@
 <ul>
-    <li *ngFor="let livre of livres">
-        <app-livre [livre]=livre
-            (click)="onClicked(livre)"></app-livre>
-    </li>
+    <ng-container *ngFor="let livre of livres, let i = index">
+        <a [routerLink]="['livre', i]">{{ livre.titre }}</a>
+    </ng-container>
 </ul>
 <span *ngIf="message">{{ message }}</span>

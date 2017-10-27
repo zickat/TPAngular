@@ -16,7 +16,7 @@ export class HeaderLivreComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.author = this.service.get().author;
+        this.author = this.service.get(0).author;
     }
 
     resetSaisie() {
